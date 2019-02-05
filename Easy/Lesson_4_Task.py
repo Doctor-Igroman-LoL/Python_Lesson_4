@@ -5,9 +5,10 @@
 # Получить новый список, элементы которого будут
 # квадратами элементов исходного списка
 # [1, 2, 4, 0] --> [1, 4, 16, 0]
+import random
 print('-' * 5, 'Решение первой задачи', '-' * 5)
 
-random_list = [x**2 for x in range(23)]
+random_list = [x**2 for x in range(1, random.randint(2, 20))]
 print(random_list)
 
 # Задание-2:
@@ -30,5 +31,5 @@ print(list_first)
 
 print('-' * 5, 'Решение третий задачи', '-' * 5)
 
-random_list_second = [i for i in range(-20, 30) if i % 3 == 0 and i > 0 and i % 4 != 0]
+random_list_second = [i for i in range(-10, random.randint(0, 30)) if i % 3 == 0 and i > 0 and i % 4 != 0]
 print(random_list_second)
