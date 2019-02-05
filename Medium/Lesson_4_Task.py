@@ -1,10 +1,24 @@
 # Эти задачи необходимо решить используя регулярные выражения!
-
+import re
 # Задача - 1
 # Запросите у пользователя имя, фамилию, email. Теперь необходимо совершить проверки, имя и фамилия должны иметь заглавные первые буквы.
 # email - не должен иметь заглавных букв и должен быть в формате: текст в нижнем регистре, допускается нижнее подчеркивание и цифры, потом @, потом текст, допускаются цифры, точка, ru или org или com.
 # Например:
 # Пупкин василий - неверно указано имя, te$T@test.net - неверно указан email (спецсимвол, заглавная буква, .net), te_4_st@test.com - верно указан.
+
+print('-' * 5, 'Решение первой задачи', '-' * 5)
+
+pattern_name_and_surname = '^[A-ZА-Я.][a-zа-я]+$'
+pattern_email = '^[a-z_0-9]+[@.][a-z0-9]+[\.](ru|org|com)$'
+name = input('Введите свое имя: ')
+surname = input('Введите свою фамилию: ')
+email = input('Введите свою электроную почту: ')
+
+print_list = []
+print_list.append(name) if re.search(pattern_name_and_surname, name) else print('Неправильно введено имя')
+print_list.append(surname) if re.search(pattern_name_and_surname, surname) else print('неправильно введена фамилия')
+print_list.append(email) if re.search(pattern_email, email) else print('неправильно введена электронная почта')
+print('{} {} - {}'.format(print_list[0], print_list[1], print_list[2]))
 
 # Задача - 2:
 # Вам дан текст:
